@@ -1,0 +1,26 @@
+[
+  {
+    "outputFileName": "wwwroot/js/jqBootstrapValidation.min.js",
+    "inputFiles": [
+      "wwwroot/js/jqBootstrapValidation.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/contact_me.min.js",
+    "inputFiles": [
+      "wwwroot/js/contact_me.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/clean-blog-ext.min.js",
+    "inputFiles": [
+      "wwwroot/js/clean-blog-ext.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/clean-blog.min.js",
+    "inputFiles": [
+      "wwwroot/js/clean-blog.js"
+    ]
+  }
+]

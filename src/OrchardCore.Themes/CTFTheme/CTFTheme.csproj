@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\node_modules\**" />
+    <EmbeddedResource Remove="wwwroot\node_modules\**" />
+    <None Remove="wwwroot\node_modules\**" />
+    <TypeScriptCompile Remove="wwwroot\node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="bundleconfig.json" />
+    <EmbeddedResource Remove="compilerconfig.json" />
+    <EmbeddedResource Remove="compilerconfig.json.defaults" />
+    <EmbeddedResource Remove="wwwroot\.browserslistrc" />
+    <EmbeddedResource Remove="wwwroot\.gitignore" />
+    <EmbeddedResource Remove="wwwroot\.travis.yml" />
+    <EmbeddedResource Remove="wwwroot\gulpfile.js" />
+    <EmbeddedResource Remove="wwwroot\LICENSE" />
+    <EmbeddedResource Remove="wwwroot\package.json" />
+    <EmbeddedResource Remove="wwwroot\scss\bootstrap-oc.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\clean-blog.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\modules\_flow.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\modules\_messages.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\modules\_pager.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\modules\_taxonomy.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\modules\_widgets.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\_bootstrap-overrides.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\_contact.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\_footer.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\_global.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\_masthead.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\_mixins.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\_navbar.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\_post.scss" />
+    <EmbeddedResource Remove="wwwroot\scss\_variables.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bundleconfig.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults" />
+    <None Include="wwwroot\.browserslistrc" />
+    <None Include="wwwroot\.gitignore" />
+    <None Include="wwwroot\.travis.yml" />
+    <None Include="wwwroot\gulpfile.js" />
+    <None Include="wwwroot\LICENSE" />
+    <None Include="wwwroot\package.json" />
+    <None Include="wwwroot\scss\bootstrap-oc.scss" />
+    <None Include="wwwroot\scss\clean-blog.scss" />
+    <None Include="wwwroot\scss\modules\_flow.scss" />
+    <None Include="wwwroot\scss\modules\_messages.scss" />
+    <None Include="wwwroot\scss\modules\_pager.scss" />
+    <None Include="wwwroot\scss\modules\_taxonomy.scss" />
+    <None Include="wwwroot\scss\modules\_widgets.scss" />
+    <None Include="wwwroot\scss\_bootstrap-overrides.scss" />
+    <None Include="wwwroot\scss\_contact.scss" />
+    <None Include="wwwroot\scss\_footer.scss" />
+    <None Include="wwwroot\scss\_global.scss" />
+    <None Include="wwwroot\scss\_masthead.scss" />
+    <None Include="wwwroot\scss\_mixins.scss" />
+    <None Include="wwwroot\scss\_navbar.scss" />
+    <None Include="wwwroot\scss\_post.scss" />
+    <None Include="wwwroot\scss\_variables.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.447" />
+    <PackageReference Include="BuildWebCompiler" Version="1.12.394" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\OrchardCore\OrchardCore.DisplayManagement\OrchardCore.DisplayManagement.csproj" />
+    <ProjectReference Include="..\..\OrchardCore\OrchardCore.ResourceManagement\OrchardCore.ResourceManagement.csproj" />
+    <ProjectReference Include="..\..\OrchardCore\OrchardCore.Theme.Targets\OrchardCore.Theme.Targets.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Layout.liquid">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

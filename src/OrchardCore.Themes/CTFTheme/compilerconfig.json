@@ -1,0 +1,10 @@
+[
+  {
+    "outputFile": "wwwroot/css/bootstrap-oc.css",
+    "inputFile": "wwwroot/scss/bootstrap-oc.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/clean-blog.css",
+    "inputFile": "wwwroot/scss/clean-blog.scss"
+  }
+]
