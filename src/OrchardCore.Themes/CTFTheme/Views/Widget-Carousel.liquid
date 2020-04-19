@@ -1,0 +1,39 @@
+{% assign content = Model.ContentItem.Content %}
+<div id="c{{Model.ContentItem.ContentItemId }}" class="carousel slide {{ Model.Classes | join: " " }}" data-ride="carousel"
+	data-interval={{content.Carousel.Interval.Value}}>
+	{% if content.Carousel.Indicators.Value %}
+	<ol class="carousel-indicators">
+		{% assign limit = content.BagPart.ContentItems.size - 1 %}
+		{% for indicator in (0..limit) %}
+		<li data-target="#c{{Model.ContentItem.ContentItemId }}" data-slide-to="{{indicator}}"
+			class="{% if indicator == 0 %}active{% endif %}"></li>
+		{% endfor %}
+	</ol>
+	{% endif %}
+	{% assign maxheight = Model.ContentItem.Content.Carousel.Height.Value | append: "px" %}
+	<div class="carousel-inner" style="max-height: {{maxheight}}">
+		{% if content.BagPart.ContentItems.size > 0 %}
+			{% assign limit = content.BagPart.ContentItems.size - 1 %}
+			{% for index in (0..limit) %}
+			{% assign slide = content.BagPart.ContentItems[index] %}
+			{% assign contentItem = slide.CarouselItem.Link.ContentItemIds.first | content_item_id %}
+			<div class="carousel-item w-100{% if index == 0 %} active{% endif %}">
+				<a href="{{ contentItem | display_url }}">
+					<img class="img-fluid w-100" src="{{slide.CarouselItem.Image.Paths.first | asset_url }}"
+						alt="{{slide.DisplayText}}">
+				</a>
+			</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+	{% if content.Carousel.Controls.Value %}
+	<a class="carousel-control-prev" href="#c{{Model.ContentItem.ContentItemId }}" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="carousel-control-next" href="#c{{Model.ContentItem.ContentItemId }}" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+	{% endif %}
+</div>

@@ -62,6 +62,10 @@ namespace OrchardCore.Themes.CTFTheme
                 .SetCdn("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.2/js/all.min.js", "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.2/js/all.js")
                 .SetCdnIntegrity("sha384-QMu+Y+eu45Nfr9fmFOlw8EqjiUreChmoQ7k7C1pFNO8hEbGv9yzsszTmz+RzwyCh", "sha384-7/I8Wc+TVwiZpEjE4qTV6M27LYR5Dus6yPGzQZowRtgh+0gDW9BNR9GmII1/YwmG")
                 .SetVersion("5.10.2");
+
+            manifest
+                .DefineScript("CTFTheme-js")
+                .SetUrl("~/CTFTheme/js/theme.min.js", "~/CTFTheme/js/theme.js");
         }
     }
 }

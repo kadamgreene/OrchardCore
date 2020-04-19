@@ -5,6 +5,7 @@
     {% if Model.HasItems %}
         <ul class="dropdown-menu">
             {% for item in Model.Items %}
+                {% shape_add_properties item IsDropDown: true %}
                 {{ item | shape_render }}
             {% endfor %}
         </ul>

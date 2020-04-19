@@ -23,6 +23,7 @@
     <!-- Bootstrap core JavaScript -->
     {% script name:"ctftheme-vendor-jquery", at:"Foot" %}    
     {% script name:"ctftheme-vendor-bootstrap-bundle", at:"Foot" %}
+    {% script name:"ctftheme-js", at:"Foot" %}
 
     <!-- Custom scripts for this template -->
     {% script src:"~/CTFTheme/js/clean-blog.min.js", debug_src:"~/CTFTheme/js/clean-blog.js", at:"Foot" %}
@@ -35,9 +36,11 @@
     {% resources type: "Stylesheet" %}
 </head>
 <body dir="{{ Culture.Dir }}">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{ '~/' | href }}">{{ Site.SiteName }}</a>
+            <a class="navbar-brand header-logo" href={{ "~/" | href }}>
+                <img src="{{ "~/CTFTheme/img/logo-empty.png" | href }}" alt="{{Site.SiteName}}">
+            </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">{{ "Toggle navigation" | t }}</span>
                 {{ "Menu" | t }} <i class="fa fa-bars"></i>
@@ -51,10 +54,11 @@
             <div class="col-lg-8 col-md-10 mx-auto">
 				{% render_section "Messages", required: false %}
                 {% render_body %}
+                <div class="clear: both">&nbsp;</div>
             </div>
         </div>
     </div>
-    <footer>
+    <footer class="bg-dark">
         {% render_section "Footer", required: false %}
     </footer>
     {% resources type: "FootScript" %}

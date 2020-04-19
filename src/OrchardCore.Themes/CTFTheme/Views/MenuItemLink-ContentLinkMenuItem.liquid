@@ -1,0 +1,9 @@
+﻿{% assign menuitem = Model.ContentItem.Content.ContentLinkMenuItem.ContentTarget.ContentItemIds.first | content_item_id %}
+{% assign title =  Model.ContentItem.Content.ContentLinkMenuItem.MenuName.Text %}
+{% if Model.HasItems %}
+    <a href="{{ menuitem | display_url }}" class="{% if Model.IsDropDown %}dropdown-item{% else %}nav-link{% endif %} dropdown-toggle  d-flex align-items-baseline" id="{{Model.ContentItem.ContentItemId }}" role="button" data-toggle="dropdown">
+        {{title}}<b class="caret ml-auto d-inline"></b>
+    </a>
+{% else %}
+    <a href="{{ menuitem | display_url }}" class="{% if Model.IsDropDown %}dropdown-item{% else %}nav-link{% endif %}">{{title}}</a>
+{% endif %}
