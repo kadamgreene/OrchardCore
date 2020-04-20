@@ -366,6 +366,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrchardCore.Shells.Azure", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTFTheme", "src\OrchardCore.Themes\CTFTheme\CTFTheme.csproj", "{AFCE15D8-C8DA-48E2-B5DD-154FEFEA89CA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTF.Module", "src\OrchardCore.Modules\CTF.Module\CTF.Module.csproj", "{CC9AD8CB-23BD-445C-9998-D9A471ADBA18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -980,6 +982,10 @@ Global
 		{AFCE15D8-C8DA-48E2-B5DD-154FEFEA89CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFCE15D8-C8DA-48E2-B5DD-154FEFEA89CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFCE15D8-C8DA-48E2-B5DD-154FEFEA89CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC9AD8CB-23BD-445C-9998-D9A471ADBA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC9AD8CB-23BD-445C-9998-D9A471ADBA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC9AD8CB-23BD-445C-9998-D9A471ADBA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC9AD8CB-23BD-445C-9998-D9A471ADBA18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1152,6 +1158,7 @@ Global
 		{5283A8BC-DFF4-436D-AA9C-EE2DBFC5D51A} = {F23AC6C2-DE44-4699-999D-3C478EF3D691}
 		{5E3FCD33-EED6-405E-B6F5-FC85E81603A5} = {F23AC6C2-DE44-4699-999D-3C478EF3D691}
 		{AFCE15D8-C8DA-48E2-B5DD-154FEFEA89CA} = {AF3BADEA-CC93-4116-B3C1-F8D074EBEE4F}
+		{CC9AD8CB-23BD-445C-9998-D9A471ADBA18} = {90030E85-0C4F-456F-B879-443E8A3F220D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46A1D25A-78D1-4476-9CBF-25B75E296341}

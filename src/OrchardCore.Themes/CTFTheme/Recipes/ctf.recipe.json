@@ -1,13 +1,13 @@
 {
-  "name": "Blog",
-  "displayName": "Blog",
-  "description": "Provides a functional Blog with CMS features.",
-  "author": "The Orchard Team",
-  "website": "https://orchardproject.net",
-  "version": "2.0",
+  "name": "CTF",
+  "displayName": "Catch the Fire",
+  "description": "Provides a websie that conforms to the CTF branding guidelines",
+  "author": "Catch the Fire Moncton",
+  "website": "https://ctfmoncton.com",
+  "version": "1.0",
   "issetuprecipe": true,
   "categories": [ "default" ],
-  "tags": [ "blog" ],
+  "tags": [ "blog", "ctf" ],
 
   // The variables are evaluated the first time they are accessed, and reused across steps
   "variables": {
@@ -72,7 +72,7 @@
         "OrchardCore.Widgets",
 
         // Themes
-        "TheBlogTheme",
+        "CTFTheme",
         "TheAdmin",
         "SafeMode"
       ]
@@ -80,7 +80,7 @@
     {
       "name": "themes",
       "admin": "TheAdmin",
-      "site": "TheBlogTheme"
+      "site": "CTFTheme"
     },
     {
       "name": "settings",

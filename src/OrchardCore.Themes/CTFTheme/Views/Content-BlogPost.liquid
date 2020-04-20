@@ -1,3 +1,17 @@
+{% capture fullurl %}{{Request.Scheme}}://{{Request.Host}}{{Request.Path}}{% endcapture %}
+{% assign blogimage = Model.ContentItem.Content.BlogPost.Image.Paths.first %}
+{% if blogimage != null %}
+{% capture blogimageurl %}{{Request.Scheme}}://{{Request.Host}}{{Model.ContentItem.Content.BlogPost.Image.Paths.first | asset_url}}{% endcapture %}
+{% endif %}
+
+{% zone "Meta" %}
+    <meta property="og:url"           content="{{fullurl}}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{Site.SiteName}}" />
+    <meta property="og:description"   content="{{Model.ContentItem.Content.TitlePart.Title}}" />
+    <meta property="og:image"         content="{{blogimageurl}}" />
+{% endzone %}
+
 {% zone "Header" %}
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->

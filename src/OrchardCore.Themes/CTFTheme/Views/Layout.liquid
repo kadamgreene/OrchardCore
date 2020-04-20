@@ -62,5 +62,7 @@
         {% render_section "Footer", required: false %}
     </footer>
     {% resources type: "FootScript" %}
+    {{Site}}
+    {{Site | json | raw }}
 </body>
 </html>
