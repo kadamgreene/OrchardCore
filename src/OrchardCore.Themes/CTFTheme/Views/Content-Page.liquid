@@ -1,4 +1,4 @@
-{% assign imagePath = Model.ContentItem.Content.Blog.Image.Paths.first %}
+{% assign imagePath = Model.ContentItem.Content.Page.Image.Paths.first %}
 {% if imagePath != null %}
 {% capture sub_string %}{{'mp4'}}{% endcapture %}
 {% capture some_string %}{{imagePath}}{% endcapture %}
@@ -28,9 +28,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="site-heading">
+                    <div class="page-heading">
                         <h1>{{ Model.ContentItem.DisplayText }}</h1>
-                        <span class="subheading">{{ Model.Content.HtmlBodyPart | shape_render }}</span>
+                        <h2 class="subheading">{{ Model.ContentItem.Content.Page.Subtitle.Text }}</h2>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,5 @@
     </header>
 {% endzone %}
 
-{% shape_remove_item Model.Content "HtmlBodyPart" %}
-{% shape_remove_item Model.Content "Blog-Image" %}
-
-{{ Model.Content | shape_render }}
+{{ Model.Content.ContentsMetadata | shape_render }}
+{{ Model.Content.FlowPart | shape_render }}
