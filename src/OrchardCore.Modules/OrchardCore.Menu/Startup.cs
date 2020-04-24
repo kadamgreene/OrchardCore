@@ -1,4 +1,7 @@
 using System;
+using CTFTheme.Drivers;
+using CTFTheme.Migrations;
+using CTFTheme.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,6 +36,7 @@ namespace OrchardCore.Menu
         public override void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IDataMigration, Migrations>();
+            services.AddScoped<IDataMigration, ContentMenuItemMigrations>();
             services.AddScoped<IShapeTableProvider, MenuShapes>();
             services.AddScoped<IPermissionProvider, Permissions>();
             services.AddScoped<INavigationProvider, AdminMenu>();
@@ -47,6 +51,10 @@ namespace OrchardCore.Menu
             // LinkMenuItemPart
             services.AddContentPart<LinkMenuItemPart>()
                 .UseDisplayDriver<LinkMenuItemPartDisplayDriver>();
+
+            // ContentMenuItemPart
+            services.AddContentPart<ContentMenuItemPart>()
+                .UseDisplayDriver<ContentMenuItemPartDisplayDriver>();
 
             services.AddTagHelpers<MenuTagHelper>();
         }

@@ -1,0 +1,10 @@
+@inject OrchardCore.ContentManagement.IContentManager ContentManager
+
+@{
+    ContentMenuItemPart part = Model.MenuItemPart;
+    var contentItem = await ContentManager.GetAsync(part.Target.ContentItemIds.First());
+    var metadata = await ContentManager.PopulateAspectAsync<ContentItemMetadata>(contentItem);
+    var url = Url.Action(metadata.DisplayRouteValues["action"].ToString(), metadata.DisplayRouteValues);
+}
+
+@contentItem.DisplayText <code>@url.Replace(Context.Request.PathBase, "~")</code> <span class="text-muted">- Content</span>

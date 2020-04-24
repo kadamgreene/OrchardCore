@@ -1,0 +1,11 @@
+@using OrchardCore.ContentManagement
+
+@inject OrchardCore.ContentManagement.IContentManager ContentManager
+
+@{
+    ContentItem contentItem = Model.ContentItem;
+    var contentMenuItemPart = contentItem.As<ContentMenuItemPart>();
+    var target = await ContentManager.GetAsync(contentMenuItemPart.Target.ContentItemIds.First());
+}
+
+<a display-for="@target.ContentItem">@target.DisplayText</a>
