@@ -41,7 +41,6 @@ namespace CTFTheme.Drivers
         public override IDisplayResult Edit(ContentMenuItemPart part)
         {
             return Initialize<ContentMenuItemPartEditViewModel>("ContentMenuItemPart_Edit", model => {
-                model.Target = part.Target;
                 model.MenuItemPart = part;
             });
         }

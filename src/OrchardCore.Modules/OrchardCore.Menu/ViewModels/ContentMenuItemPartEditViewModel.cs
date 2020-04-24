@@ -10,12 +10,11 @@ namespace CTFTheme.ViewModels
     public class ContentMenuItemPartEditViewModel
     {
         public ContentMenuItemPart MenuItemPart { get; set; }
-        public ContentPickerField Target { get; internal set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             var T = validationContext.GetService<IStringLocalizer<ContentMenuItemPartEditViewModel>>();
-            if (Target == null || Target.ContentItemIds?.Length == 0)
+            if (MenuItemPart?.Target == null || MenuItemPart?.Target.ContentItemIds?.Length == 0)
             {
                 yield return new ValidationResult(T["Target is required"]);
             }

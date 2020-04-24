@@ -31,7 +31,7 @@ namespace CTFTheme.Migrations
                             DisplayedContentTypes = new string[]
                             {
                                 "Page",
-                                "Liquid",
+                                "Liquid Page",
                                 "Blog",
                                 "Tag",
                                 "Category"
